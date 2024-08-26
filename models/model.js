@@ -4,11 +4,11 @@ const authorSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            require: true
+            rrequired: [true, "Book name is required"],
         },
         year: {
             type: Number,
-            require: true
+            require: true,
         },
         books: [
             {
@@ -24,7 +24,7 @@ const bookSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: [true, "User name is required"],
+            required: [true, "Book name is required"],
             unique: true,
         },
         publishedDate: {

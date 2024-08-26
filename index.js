@@ -25,7 +25,7 @@ app.use("/api/author", authorRoutes);
 
 app.use("/api/book", (req, res) => {
     return res.status(200).json({
-        message: 'This is new feature change, a new route for products'
+        message: 'New route for products'
     })
 });
 
