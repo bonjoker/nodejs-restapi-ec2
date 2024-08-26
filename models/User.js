@@ -1,21 +1,46 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema(
+const authorSchema = new mongoose.Schema(
+    {
+        name: {
+            type: String,
+            require: true
+        },
+        year: {
+            type: Number,
+            require: true
+        },
+        books: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Book",
+            },
+        ],
+
+    }
+);
+
+const bookSchema = new mongoose.Schema(
     {
         name: {
             type: String,
             required: [true, "User name is required"],
             unique: true,
         },
-        email: {
+        publishedDate: {
             type: String,
-            required: [true, "Email is required"],
-            unique: true,
         },
-    },
-    {
-        timestamps: true,
+        genres: {
+            type: [String]
+        },
+        author: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Author",
+        },
     }
 );
 
-module.exports = mongoose.model("User", userSchema);
+let Book = mongoose.model("Book", bookSchema);
+let Author = mongoose.model("Author", authorSchema);
+
+module.exports = { Book, Author };

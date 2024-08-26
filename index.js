@@ -20,8 +20,8 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-const userRoutes = require("./routes/users");
-app.use("/api/users", userRoutes);
+const authorRoutes = require("./routes/users");
+app.use("/api/users", authorRoutes);
 
 app.use("/api/products", (req, res) => {
     return res.status(200).json({
