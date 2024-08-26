@@ -1,4 +1,4 @@
-const { Author, Book } = require("../models/User");
+const { Author, Book } = require("../models/model");
 
 const authorController = {
     // create a author

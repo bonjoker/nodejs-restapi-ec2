@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const authorController = require("../controllers/user");
+const authorController = require("../controllers/authorController");
 
 
 // create a author

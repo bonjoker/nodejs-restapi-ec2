@@ -20,10 +20,10 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-const authorRoutes = require("./routes/users");
+const authorRoutes = require("./routes/author");
 app.use("/api/author", authorRoutes);
 
-app.use("/api/products", (req, res) => {
+app.use("/api/book", (req, res) => {
     return res.status(200).json({
         message: 'This is new feature change, a new route for products'
     })
