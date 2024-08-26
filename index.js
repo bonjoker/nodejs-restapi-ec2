@@ -21,7 +21,7 @@ app.use(express.json());
 
 // Routes
 const authorRoutes = require("./routes/users");
-app.use("/api/users", authorRoutes);
+app.use("/api/author", authorRoutes);
 
 app.use("/api/products", (req, res) => {
     return res.status(200).json({
