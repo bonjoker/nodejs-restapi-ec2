@@ -4,7 +4,7 @@ const authorSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            rrequired: [true, "Book name is required"],
+            required: [true, "Author name is required"],
         },
         year: {
             type: Number,
