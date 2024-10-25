@@ -5,7 +5,7 @@ const createUser = async (req, res, next) => {
         const { name, email } = req.body;
         if (!name || !email) {
             res.status(400);
-            return next(new Error("name & email fields are required"));
+            return next(new Error("Name & email fields are required"));
         }
 
         // check if user already exists
